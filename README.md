@@ -29,7 +29,7 @@ To get started with the application, follow these steps:
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo-name.git`
+1. Clone the repository: `https://github.com/willeynimbus/crud-application`
 2. Install dependencies: `npm install` or `yarn install`
 3. Start the development server: `npm run dev` or `yarn dev`
 
