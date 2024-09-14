@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **CRUD Application with Next.js, React Query, Radix UI, and Tailwind CSS**
 
-## Getting Started
+## **Table of Contents**
 
-First, run the development server:
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Introduction**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is a simple CRUD (Create, Read, Update, Delete) application built with Next.js, Typescript, React Tanstack Query, Radix UI, and Tailwind CSS. The application allows users to add, edit, and delete tasks, and view all tasks sorted by priority.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Features**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Task Management**: Create, read, update, and delete tasks
+- **Task Sorting**: Sort tasks by priority
+- **Search Functionality**: Search tasks by keyword
+- **Responsive Design**: Built with Tailwind CSS for a responsive design
+- **State Management**: Uses React Tanstack Query for state management
+- **UI Components**: Built with Radix UI and Shadcn UI for a consistent UI
 
-## Learn More
+## **Getting Started**
 
-To learn more about Next.js, take a look at the following resources:
+To get started with the application, follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository: `git clone https://github.com/your-username/your-repo-name.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
 
-## Deploy on Vercel
+### Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Open the application in your web browser: `http://localhost:3000`
+2. Create a new task by clicking the "Add Task" button
+3. Edit a task by clicking the "Edit" button
+4. Delete a task by clicking the "Delete" button
+5. Search for tasks by keyword using the search bar
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## **Contributing**
+
+Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request.
+
+## **License**
+
+This project is licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
