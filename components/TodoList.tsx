@@ -59,6 +59,8 @@ const TodoList: React.FC = () => {
     Medium: 2,
     Low: 1,
   };
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
 
   const columns: ColumnDef<Task>[] = [
     {
@@ -165,7 +167,11 @@ const TodoList: React.FC = () => {
             Edit
           </Button>
           <Button
-            onClick={() => handleDelete(row.original.id)}
+            // onClick={() => handleDelete(row.original.id)}
+            onClick={() => {
+              setTaskToDelete(row.original);
+              setIsDeleteDialogOpen(true);
+            }}
             className="bg-red-400 rounded-full"
           >
             Delete
@@ -226,8 +232,19 @@ const TodoList: React.FC = () => {
     }
   };
 
-  const handleDelete = (id: string) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const handleConfirmDelete = () => {
+    if (taskToDelete) {
+      setTasks((prevTasks) =>
+        prevTasks.filter((task) => task.id !== taskToDelete.id)
+      );
+      setTaskToDelete(null);
+      setIsDeleteDialogOpen(false);
+    }
+  };
+
+  const handleCancelDelete = () => {
+    setTaskToDelete(null);
+    setIsDeleteDialogOpen(false);
   };
 
   const handleSearch = useCallback(
@@ -509,6 +526,31 @@ const TodoList: React.FC = () => {
           <Button onClick={handleEditTask} className="bg-blue-500">
             Save Changes
           </Button>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+        <DialogContent
+          onPointerDownOutside={(e) => e.preventDefault()}
+          className="bg-white p-6 rounded-lg shadow-lg"
+        >
+          <DialogHeader>
+            <DialogTitle>Confirm Deletion</DialogTitle>
+          </DialogHeader>
+          <p className="mt-4">Are you sure you want to delete this task?</p>
+          <div className="mt-6 flex justify-end space-x-4">
+            <Button
+              onClick={handleConfirmDelete}
+              className="bg-red-500 hover:bg-red-600 text-white"
+            >
+              Confirm
+            </Button>
+            <Button
+              onClick={handleCancelDelete}
+              className="bg-gray-500 hover:bg-gray-600 text-white"
+            >
+              Cancel
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
     </div>
